@@ -1,0 +1,104 @@
+<div>
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      height: 80vh;
+    "
+  >
+    <img src="../../assets/images/img2.jpeg" width="600px" height="500px" />
+    <form
+      [formGroup]="registrationForm"
+      autocomplete="off"
+      style="padding: 10px"
+    >
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 20px;
+        "
+      >
+        <div class="title">Let's get you set up!</div>
+        <mat-form-field appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input
+            matInput
+            placeholder="Enter Firstname"
+            formControlName="firstName"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input
+            matInput
+            placeholder="Enter Lastname"
+            formControlName="lastName"
+          />
+        </mat-form-field>
+
+        <!-- <mat-form-field appearance="outline">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput placeholder="Enter Date of Birth" formControlName="dob">
+                </mat-form-field>  -->
+
+        <mat-form-field appearance="outline">
+          <mat-label>Date of Birth</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dob" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Semester</mat-label>
+          <mat-select matSelect formControlName="semester">
+            <mat-option disabled>Select Semester</mat-option>
+            <mat-option *ngFor="let sem of semesterList" [value]="sem">
+              {{ sem }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <span style="font-size: 15px">Enrolled Courses *</span>
+        <br />
+        <div *ngFor="let data of coursesList; let i = index">
+          <label>
+            <input
+              type="checkbox"
+              [value]="data.value"
+              (change)="onCheckboxChange($event)"
+            />
+            {{ data.name }}
+          </label>
+        </div>
+
+        <mat-form-field appearance="outline" style="grid-column: 1 / 3">
+          <mat-label>Additional Notes</mat-label>
+          <textarea
+            matInput
+            placeholder="Enter additional notes"
+            rows="5"
+            formControlName="notes"
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <div style="margin-top: 15px; float: right">
+        <button
+          color="primary"
+          mat-raised-button
+          type="submit"
+          [disabled]="registrationForm.invalid"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
