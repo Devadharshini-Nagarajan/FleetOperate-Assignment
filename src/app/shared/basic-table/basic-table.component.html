@@ -1,0 +1,33 @@
+<div>
+  <div class="mat-elevation-z8" style="margin-top: 15px">
+    <table mat-table [dataSource]="dataSource" width="100%">
+      <!-- name Column -->
+      <ng-container
+        [matColumnDef]="column"
+        *ngFor="let column of displayedColumns"
+      >
+        <th mat-header-cell *matHeaderCellDef>
+          {{ column.charAt(0).toUpperCase() + column.slice(1) }}
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <div
+      class="nc"
+      *ngIf="no_data"
+      style="text-align: center; margin-top: 10px; color: gray"
+    >
+      No records found
+    </div>
+    <mat-paginator
+      class="paginator"
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements"
+    >
+    </mat-paginator>
+  </div>
+</div>
