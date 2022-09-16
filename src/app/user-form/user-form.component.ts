@@ -15,11 +15,11 @@ export class UserFormComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   registrationForm = this.fb.group({
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
+    firstname: ['', Validators.required],
+    lastname: ['', Validators.required],
     dob: ['', Validators.required],
     semester: ['', Validators.required],
-    courses: this.fb.array([],[Validators.required]),
+    courses: this.fb.array([], [Validators.required]),
     notes: [''],
   });
 
@@ -28,11 +28,20 @@ export class UserFormComponent implements OnInit {
     { name: 'Database Management', value: 'Database Management' },
     { name: 'Career Management', value: 'Career Management' },
     { name: 'User Experience', value: 'User Experience' },
-    { name: 'Data Analytics', value: 'Data Analytics' },
+    { name: 'Web Development', value: 'Web Development' },
   ];
 
   semesterList: any = ['Semester 1', 'Semester 2', 'Semester 3', 'Semester 4'];
-  usersList: any = [];
+  displayedColumns: string[] = [
+    'firstname',
+    'lastname',
+    'dob',
+    'semester',
+    'courses',
+    'notes',
+  ];
+  dataSource: any = [];
+  no_data: boolean = true;
 
   ngOnInit(): void {}
 
@@ -54,6 +63,27 @@ export class UserFormComponent implements OnInit {
     }
   }
   onSubmit() {
-    console.log(this.registrationForm);
+    let coursesList: any = this.registrationForm.value.courses?.join();
+    // update datasource
+    let newList = [
+      ...this.dataSource,
+      { ...this.registrationForm.value, courses: coursesList },
+    ];
+    this.dataSource = newList;
+    // update no_data
+    if (newList.length > 0) this.no_data = false;
+    else this.no_data = true;
+    // clear fields
+    const arr = <FormArray>this.registrationForm.controls.courses;
+    arr.controls = [];
+    this.registrationForm.reset();
+    this.registrationForm.markAsUntouched();
+    this.registrationForm.patchValue({
+      firstname: '',
+      lastname: '',
+      dob: '',
+      semester: '',
+      notes: '',
+    });
   }
 }

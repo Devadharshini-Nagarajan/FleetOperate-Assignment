@@ -27,7 +27,7 @@
           <input
             matInput
             placeholder="Enter Firstname"
-            formControlName="firstName"
+            formControlName="firstname"
           />
         </mat-form-field>
 
@@ -36,7 +36,7 @@
           <input
             matInput
             placeholder="Enter Lastname"
-            formControlName="lastName"
+            formControlName="lastname"
           />
         </mat-form-field>
 
@@ -101,4 +101,9 @@
       </div>
     </form>
   </div>
+  <app-basic-table
+    [data]="dataSource"
+    [displayedColumns]="displayedColumns"
+    [no_data]="no_data"
+  ></app-basic-table>
 </div>

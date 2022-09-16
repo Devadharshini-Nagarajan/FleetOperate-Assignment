@@ -9,7 +9,7 @@ const routes: Routes = [
     component: UserFormComponent,
   },
   {
-    path: 'users',
+    path: 'countries',
     component: UserTableComponent,
   },
 ];

@@ -1,3 +1,26 @@
 <div>
-    
+  <div style="display: flex; align-items: center">
+    <mat-form-field
+      class="example-full-width"
+      appearance="outline"
+      class="search-field"
+    >
+      <mat-label></mat-label>
+      <input matInput placeholder="Search" [(ngModel)]="seachValue" />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      style="margin-left: 15px"
+      (click)="onSearch()"
+    >
+      Search Country
+    </button>
+  </div>
+
+  <app-basic-table
+    [data]="dataSource"
+    [displayedColumns]="displayedColumns"
+    [no_data]="no_data"
+  ></app-basic-table>
 </div>
