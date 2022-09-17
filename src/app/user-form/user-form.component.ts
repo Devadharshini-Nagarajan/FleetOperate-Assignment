@@ -65,7 +65,9 @@ export class UserFormComponent implements OnInit {
   }
   onSubmit() {
     let coursesList: any = this.registrationForm.value.courses?.join();
-    let dateVal : any = moment(this.registrationForm.value.dob).format("YYYY-MM-DD");
+    let dateVal: any = moment(this.registrationForm.value.dob).format(
+      'YYYY-MM-DD'
+    );
     // update datasource
     let newList = [
       ...this.dataSource,
