@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit,
   Input,
   AfterViewInit,
   ViewChild,
@@ -8,6 +7,7 @@ import {
 } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-basic-table',
@@ -23,8 +23,8 @@ export class BasicTableComponent implements AfterViewInit {
 
   dataSource: any;
 
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
+  @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
+  @ViewChild(MatSort) sort: MatSort | undefined;
 
   ngAfterViewInit() {
     // this.dataSource.paginator = this.paginator;
@@ -32,6 +32,7 @@ export class BasicTableComponent implements AfterViewInit {
   ngOnChanges(changes: SimpleChanges) {
     this.dataSource = new MatTableDataSource(this.data);
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   ngOnInit(): void {}
