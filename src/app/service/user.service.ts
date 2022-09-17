@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class UserService {
-  _url = 'https://universities.hipolabs.com/search?country=';
+  _url = 'http://universities.hipolabs.com/search?country=';
   constructor(private _http: HttpClient) {}
 
   onSearch(value: string) {
