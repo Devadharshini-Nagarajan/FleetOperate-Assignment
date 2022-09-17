@@ -71,6 +71,7 @@
           <label>
             <input
               type="checkbox"
+              [checked]="registrationForm.value.courses?.includes(data.value)"
               [value]="data.value"
               (change)="onCheckboxChange($event)"
             />
@@ -101,9 +102,12 @@
       </div>
     </form>
   </div>
-  <app-basic-table
-    [data]="dataSource"
-    [displayedColumns]="displayedColumns"
-    [no_data]="no_data"
-  ></app-basic-table>
+  <div style="padding: 10px 0 50px 0;">
+    <div class="title">User List</div>
+    <app-basic-table
+      [data]="dataSource"
+      [displayedColumns]="displayedColumns"
+      [no_data]="no_data"
+    ></app-basic-table>
+  </div>
 </div>

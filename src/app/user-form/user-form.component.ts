@@ -5,6 +5,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-user-form',
@@ -64,10 +65,11 @@ export class UserFormComponent implements OnInit {
   }
   onSubmit() {
     let coursesList: any = this.registrationForm.value.courses?.join();
+    let dateVal : any = moment(this.registrationForm.value.dob).format("YYYY-MM-DD");
     // update datasource
     let newList = [
       ...this.dataSource,
-      { ...this.registrationForm.value, courses: coursesList },
+      { ...this.registrationForm.value, courses: coursesList, dob: dateVal },
     ];
     this.dataSource = newList;
     // update no_data
@@ -77,13 +79,9 @@ export class UserFormComponent implements OnInit {
     const arr = <FormArray>this.registrationForm.controls.courses;
     arr.controls = [];
     this.registrationForm.reset();
-    this.registrationForm.markAsUntouched();
-    this.registrationForm.patchValue({
-      firstname: '',
-      lastname: '',
-      dob: '',
-      semester: '',
-      notes: '',
-    });
+    let checkArray: FormArray = this.registrationForm.get(
+      'courses'
+    ) as FormArray;
+    console.log(checkArray)
   }
 }
