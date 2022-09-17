@@ -79,9 +79,5 @@ export class UserFormComponent implements OnInit {
     const arr = <FormArray>this.registrationForm.controls.courses;
     arr.controls = [];
     this.registrationForm.reset();
-    let checkArray: FormArray = this.registrationForm.get(
-      'courses'
-    ) as FormArray;
-    console.log(checkArray)
   }
 }

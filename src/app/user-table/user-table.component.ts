@@ -36,10 +36,3 @@ export class UserTableComponent implements OnInit {
     );
   }
 }
-
-// export interface wordElement {
-//   name: string;
-//   domains: string;
-//   alpha_two_code: string;
-//   web_pages: string;
-// }
