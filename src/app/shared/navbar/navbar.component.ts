@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  goToPage(val: string) {
-    this.router.navigateByUrl(val);
-  }
+  // goToPage(val: string) {
+  //   this.router.navigateByUrl(val);
+  // }
 }
