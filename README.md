@@ -1,27 +1,27 @@
-# FleetoperateAssignment
+# Angular Form App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
+Welcome to the Angular Form App! This application allows users to fill out a form with basic fields such as name, date of birth (DOB), semester, enrolled courses, and additional comments. The form utilizes reactive forms for data handling and validation. Upon submission, the details are added to a table below, which includes pagination and sorting functionalities. This app is built using Angular Material for styling and UI components. You can run the app online by visiting [Fleetoperate Assignment]([https://webofdeva-covid19tracker.netlify.app](https://webofdeva-fleetoperate.netlify.app/)).
 
-## Development server
+<img width="1436" alt="image" src="https://github.com/Devadharshini-Nagarajan/FleetOperate-Assignment/assets/113491692/0782a287-e8cb-4ea9-8bb6-3001fe221aae">
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Form Fields:** Fill out a form with fields including name, date of birth (DOB), semester, enrolled courses, and additional comments.
+- **Reactive Forms:** Utilize Angular reactive forms for handling form data and validation.
+- **Table Display:** Display submitted form details in a table with pagination and sorting functionalities.
+- **Angular Material:** Use Angular Material components for styling and UI elements.
 
-## Build
+## Technologies Used
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular:** A TypeScript-based web application framework.
+- **Angular Reactive Forms:** A module for creating reactive forms in Angular applications.
+- **Angular Material:** A UI component library for Angular applications.
 
-## Running unit tests
+## Usage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Fill Form:** Enter your name, date of birth (DOB), semester, enrolled courses, and additional comments in the form fields.
+- **Validation:** Form fields are validated based on specified criteria.
+- **Submit Form:** Click the submit button to add the form details to the table below.
+- **Table Navigation:** Use pagination to navigate through multiple pages of table data.
+- **Sorting:** Click on table headers to sort data in ascending or descending order.
