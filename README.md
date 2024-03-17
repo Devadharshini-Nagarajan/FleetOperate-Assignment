@@ -1,6 +1,6 @@
 # Angular Form App
 
-Welcome to the Angular Form App! This application allows users to fill out a form with basic fields such as name, date of birth (DOB), semester, enrolled courses, and additional comments. The form utilizes reactive forms for data handling and validation. Upon submission, the details are added to a table below, which includes pagination and sorting functionalities. This app is built using Angular Material for styling and UI components. You can run the app online by visiting [Fleetoperate Assignment]([https://webofdeva-covid19tracker.netlify.app](https://webofdeva-fleetoperate.netlify.app/)).
+Welcome to the Angular Form App! This application allows users to fill out a form with basic fields such as name, date of birth (DOB), semester, enrolled courses, and additional comments. The form utilizes reactive forms for data handling and validation. Upon submission, the details are added to a table below, which includes pagination and sorting functionalities. This app is built using Angular Material for styling and UI components. You can run the app online by visiting [Fleetoperate Assignment](https://webofdeva-fleetoperate.netlify.app/).
 
 <img width="1436" alt="image" src="https://github.com/Devadharshini-Nagarajan/FleetOperate-Assignment/assets/113491692/0782a287-e8cb-4ea9-8bb6-3001fe221aae">
 
